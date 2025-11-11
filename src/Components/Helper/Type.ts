@@ -71,4 +71,7 @@ export interface AddCartContextInterface {
 export interface SearchContextInterface{
   SearchTerm:string;
   setSearchTerm:(value:string)=>void;
+  debouncedSearch:string;
+  debouncedSearch2:string;
+  setdebouncedSearch:(value:string)=>void;
 }

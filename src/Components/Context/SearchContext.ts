@@ -4,6 +4,9 @@ import { createContext } from "react";
 export const SearchContext=createContext<SearchContextInterface>({
     SearchTerm:"",
     setSearchTerm:()=>{},
+    debouncedSearch:"",
+    setdebouncedSearch:()=>{},
+    debouncedSearch2:""
 }
 )
 export const SearchContextprovider=SearchContext.Provider;

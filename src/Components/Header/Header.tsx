@@ -13,7 +13,14 @@ export default function Header() {
     closeProfile,
     IsProfileopen,
   } = useAuth();
-  const { SearchTerm, setSearchTerm } = useSearch();
+  const { SearchTerm, setSearchTerm,setdebouncedSearch } = useSearch();
+  useEffect(()=>{
+    const timer=setTimeout(() => {
+      setdebouncedSearch(SearchTerm)
+    }, 1000);// wait 1000ms after typing stops
+    return ()=>clearTimeout(timer)//cleanup if user types again quickly
+  },[SearchTerm])
+  
   const navigate = useNavigate();
   const MenuRef = useRef<HTMLDivElement>(null);
   function LogoutHandle() {
