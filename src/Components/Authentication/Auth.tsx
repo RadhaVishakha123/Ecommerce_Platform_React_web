@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import useAuth from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import type{ User } from "../Helper/Type";
+
 
 
 export default function ResponsiveSwapBoxes() {
