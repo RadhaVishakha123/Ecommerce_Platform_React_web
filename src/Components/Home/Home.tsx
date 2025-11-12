@@ -27,7 +27,7 @@ export default function Home() {
   const { AddCard, setBuyNowItem } = useAddCart();
   const productid = nanoid(10);
   const navigate = useNavigate();
-  const { SearchTerm } = useSearch();
+  const { SearchTerm,debouncedSearch,debouncedSearch2 } = useSearch();
   useEffect(() => {
     async function FetchshoesFromApi() {
       try {
@@ -64,9 +64,9 @@ export default function Home() {
       activeCategory == "All" || item.category == activeCategory;
 
     const Searchfiterproduct = item.title
-      .toLocaleLowerCase()
+      .toLowerCase()
       .trim()
-      .includes(SearchTerm.toLocaleLowerCase());
+      .includes(debouncedSearch2?.toLowerCase());
     return MatchCategory && Searchfiterproduct;
   });
 

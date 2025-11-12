@@ -1,5 +1,6 @@
 
 import './App.css'
+import Search from './Components/Search'
 import Auth from './Components/Authentication/Auth'
 import { createBrowserRouter } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <>
+   {/* <Search></Search> */}
     <AuthContextProviderWithlayout>
       <AddCartProviderWithlayout>
         <SearchContextProviderwithlayout>
@@ -35,6 +37,7 @@ function App() {
       </SearchContextProviderwithlayout>
       </AddCartProviderWithlayout>
       </AuthContextProviderWithlayout>
+
     </>
   )
 }
